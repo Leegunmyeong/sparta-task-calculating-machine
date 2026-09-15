@@ -29,7 +29,8 @@ class Calculator {
                 System.out.println("결과: " + result);
                 break;
             case '*':
-                System.out.println("결과: " + (num1 * num2));
+                result = num1 * num2;
+                System.out.println("결과: " + result);
                 break;
             case '/':
                 if (num2 == 0) {
@@ -49,10 +50,13 @@ class Calculator {
         return  result;
     }
 
+
+    //getter
     public List<Integer> getResults() {
         return results;
     }
 
+    //setter
     public void setResults(List<Integer> results) {
         this.results = results;
     }
