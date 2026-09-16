@@ -6,7 +6,7 @@ import java.util.List;
 
 class Calculator {
 
-    /* 속성
+    /* 속성 (필드)
     * private 접근 제어자: 외부 클래스(App)에서 results 변수에 직접 접근(수정/삭제)못하도록 캡슐화 진행
     * List<Integer>: 인터페이스(List)를 타입으로 선언 -> 추후 다른 리스트로 변경할 때 유연성 확보
     * 주의: 지금 단계는 메모리 공간이 할당되지 않는 null 상태 -> 이 상태에서 바로 값을 넣으면 NullPointerException 에러가 발생
@@ -87,5 +87,19 @@ class Calculator {
     public void setResults(List<Integer> results) {
         this.results = results;
     }
+
+    // 삭제
+    // 리스트가 비어있으면 비어 있다는 메세지 출력 / 리스트에 값이 있으면 [0]번째 삭제 및 삭제 결과 출력
+    public void removeResult() {
+        if (results.isEmpty()) {
+            System.out.println("리스트가 비어있습니다");
+        } else {
+            int removeIndex = results.remove(0);
+            System.out.println("삭제된 결과 -> " + removeIndex);
+        }
+
+    }
+
+
 }
 
