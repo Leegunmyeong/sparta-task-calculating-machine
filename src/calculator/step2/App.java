@@ -65,11 +65,13 @@ public class App {
              * calculator 객체의 calculate 메서드로 전달하여 연산
              */
             calculator.calculate(num1, num2, selectCalculateFctSign);
-
+            System.out.println("======================================");
+            System.out.println("계산 결과 저장 리스트: " + calculator.getResults()); // getter를 활용 -> 연산결과 저장 리스트 출력
             System.out.println("======================================");
             System.out.println("""
-                    계산기 종료 -> exit 입력
-                    계속 이용 -> 아무 문자나 입력
+                    계산기 종료 🙋‍♂️ -> exit 입력
+                    처음 저장 결과 삭제 🛑 ->
+                    계속 이용 👀 -> 아무 문자나 입력
                     """);
             System.out.print("입력:");
             // 종료 여부 판단할 문자열 입력 받기
@@ -80,6 +82,8 @@ public class App {
             if (inputUserText.equals("exit")) {
                 System.out.println("프로그램을 종료합니다.🙂‍↕️");
                 break; // 메인 while 반복문 빠져나가 main 메서드가 끝난다
+            } else if (inputUserText.equals("remove")) {
+                calculator.removeResult(); // removeResult 메서드 활용
             }
             System.out.println(); // 줄바꿈을 주어 다음 계산기 실행 화면을 구분
         }
