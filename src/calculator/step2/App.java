@@ -83,7 +83,8 @@ public class App {
                 System.out.println("프로그램을 종료합니다.🙂‍↕️");
                 break; // 메인 while 반복문 빠져나가 main 메서드가 끝난다
             } else if (inputUserText.equals("remove")) {
-                calculator.removeResult(); // removeResult 메서드 활용
+                // removeResult 메서드 활용: 인자값을 지정해주지않고 깔끔하게 사용
+                calculator.removeResult();
             }
             System.out.println(); // 줄바꿈을 주어 다음 계산기 실행 화면을 구분
         }
