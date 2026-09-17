@@ -1,5 +1,8 @@
 package calculator.step2;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -14,6 +17,7 @@ public class App {
         // 입력받은 정수를 저장하기 위해 사용할 변수 미리 선언
         int num1;
         int num2;
+        List<Integer> resetList = new ArrayList<>();
 
         // 메인 입력 반복문: 사용자가 exit를 입력해서 프로그램을 종료시키기 전까지 계산기 프로그램 작동 반복
         while (true) {
@@ -70,7 +74,8 @@ public class App {
             System.out.println("======================================");
             System.out.println("""
                     계산기 종료 🙋‍♂️ -> exit 입력
-                    처음 저장 결과 삭제 🛑 ->
+                    처음 저장 결과 삭제 🛑 -> remove 입력
+                    리스트 초기화 -> reset 입력
                     계속 이용 👀 -> 아무 문자나 입력
                     """);
             System.out.print("입력:");
@@ -84,7 +89,9 @@ public class App {
                 break; // 메인 while 반복문 빠져나가 main 메서드가 끝난다
             } else if (inputUserText.equals("remove")) {
                 // removeResult 메서드 활용: 인자값을 지정해주지않고 깔끔하게 사용
-                calculator.removeResult();
+                calculator.removeFirstResult();
+            } else if (inputUserText.equals("reset")) {
+                calculator.setResults(resetList);// setter 메서드에 초기화를 위한 새로운 리스트를 인자값 할당
             }
             System.out.println(); // 줄바꿈을 주어 다음 계산기 실행 화면을 구분
         }

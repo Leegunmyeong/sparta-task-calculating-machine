@@ -84,8 +84,12 @@ class Calculator {
 
     // setter[메서드]
     // 외부에서 전달받은 리스트(results)로 현재 객체의 results 속성을 전체 교체/설정하는 메서드
-    public void setResults(List<Integer> results) {
-        this.results = results;
+    // 외부에서 전달받은 정수를 순서대로 리스트에 저장하는 새로운 리스트 인자값 매개변수에 할당
+    // 기존 리스트 외부에서 받은 텅텅민 리스트로 값이 수정(초기화 느낌) 그러면 텅텅빈 리스트가 results에 담겨서 초기화 완료
+    // 리스트 초기화 안내 메세지 출력
+    public void setResults(List<Integer> newResetList) {
+        this.results = newResetList;
+        System.out.println("리스트가 초기화 되었습니다");
     }
 
     // 삭제
@@ -94,7 +98,7 @@ class Calculator {
     * 처음에는 매개변수를 활용해서 외부에서 인자값을 받아오는 흐름으로 작성 <- (수정 전)
     * 수정 후에는 외부에서 인자 값을 주지않아도 메서드 기능 내부에서 알아서 0번을 삭제하도록 <- 수정
     * */
-    public void removeResult() {
+    public void removeFirstResult() {
         if (results.isEmpty()) {
             System.out.println("리스트가 비어있습니다");
         } else {
