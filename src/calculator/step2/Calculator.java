@@ -33,7 +33,7 @@ class Calculator {
     *  계산되어 나온 최종 연산 결과 값 (int)
     * */
     // public int: 메서드가 모든 작업 끝내고 최종적으로 담는 값의 타입
-    public int calculate(int num1, int num2, char operator) {
+    public void calculate(int num1, int num2, char operator) {
         // 연산 결과를 임시로 저장할 지역 변수
         int result = 0;
         switch (operator) {
@@ -70,9 +70,6 @@ class Calculator {
         // 결과를 리스트에 추가
         // 생성자에게 메모리 할당 받은 results 리스트에 계산결과 result를 저장
         results.add(result);
-
-        // 호출한 App.java 클래스로 계산된 최종 결과를 전달
-        return result;
     }
 
 
