@@ -99,8 +99,8 @@ class Calculator {
         if (results.isEmpty()) {
             System.out.println("리스트가 비어있습니다");
         } else {
-            int removeIndex = results.remove(0);
-            System.out.println("삭제된 결과 -> " + removeIndex);
+            results.remove(0);
+            System.out.println("삭제된 결과 -> " + getResults());
         }
 
     }
