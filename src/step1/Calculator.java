@@ -1,4 +1,4 @@
-package calculator.step1;
+package step1;
 
 import java.util.Scanner;
 //커밋 수정
