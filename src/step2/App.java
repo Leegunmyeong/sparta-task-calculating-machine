@@ -1,4 +1,4 @@
-package calculator.step2;
+package step2;
 
 
 import java.util.ArrayList;
